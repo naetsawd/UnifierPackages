@@ -1,0 +1,303 @@
+@font-face {
+	font-family: "Lato";
+	src: url("fonts/Lato-Regular.ttf");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Pixelify";
+	src: url("fonts/PixelifySans-VariableFont_wght.ttf");
+	font-style: normal;
+}
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: 8vh 88vh 4vh;
+	background-size: cover;
+	font-family: "Lato", sans-serif;
+	color: white;
+}
+
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0.75) 0%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
+	z-index: -1;
+}
+
+/* Header & Navigation */
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 32px;
+}
+
+.siteTitle {
+	font-family: "Pixelify", sans-serif;
+	font-size: 32px;
+	border-bottom: 1px solid white;
+	padding: 0px 12px;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+}
+
+nav > *,
+.searchBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	padding: 3px 7px;
+	margin: 0px 5px;
+	list-style-type: none;
+}
+
+.searchContainer {
+	padding: 8px;
+}
+
+.invalidSearch {
+	border: 1px solid lightcoral;
+}
+
+.searchBox,
+.searchBtn {
+	background-color: transparent;
+	outline: none;
+	border: 0;
+}
+
+.searchBox {
+	color: white;
+	font-size: 16px;
+}
+
+.searchBtn {
+	font-family: "Lato", sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	background-color: white;
+}
+
+.navItem,
+.searchBtn {
+	cursor: pointer;
+	font-size: 16px;
+	padding: 2px 10px;
+	border-radius: 20px;
+	transition: ease 0.3s;
+}
+
+.navItem:hover,
+.searchBtn:hover {
+	color: black;
+	background-color: white;
+	transform: scale(1.05);
+}
+
+.divider {
+	width: 1px;
+	height: 20px;
+	background-color: white;
+	margin: 0 5px;
+}
+
+.chosenUnit {
+	color: black;
+	background-color: white;
+	border-radius: 20px;
+}
+
+/* Content */
+.content {
+	display: grid;
+	grid-template-columns: 90%;
+	grid-template-rows: 65% 35%;
+	justify-content: center;
+	grid-template-areas: "curr" "forecast";
+}
+
+/* Current Information */
+.currInfo {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 26px 0px;
+	font-weight: 400;
+	grid-area: curr;
+}
+
+.currInfoLeft {
+	display: flex;
+	flex-direction: column;
+	font-size: 32px;
+	padding: 26px;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 720px;
+}
+
+.cityDate {
+	font-size: 16px;
+	color: lightgray;
+}
+
+.cityName {
+	font-size: 46px;
+	font-weight: 500;
+}
+
+.leftDivider {
+	margin: 16px 0px;
+}
+
+.cityTemp {
+	font-size: 28px;
+	font-weight: 400;
+}
+
+.cityWeather {
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.weatherIcon {
+	width: 128px;
+	height: 128px;
+}
+
+.currInfoRight {
+	display: flex;
+	flex-direction: column;
+	padding: 26px;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.rightInfoTitle {
+	font-size: 26px;
+	font-weight: 500;
+}
+
+.rightInfoNo {
+	font-weight: 300;
+	font-size: 22px;
+}
+
+.rightDivider {
+	margin: 10px 0px;
+}
+
+.leftDivider,
+.rightDivider {
+	background-color: white;
+	height: 1px;
+	width: 100%;
+	align-self: center;
+}
+
+/* Forecast Information */
+.forecastSection {
+	display: flex;
+	flex-direction: row;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-rows: auto;
+	margin-bottom: 26px;
+	align-items: center;
+	justify-items: center;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	grid-area: forecast;
+}
+
+.forecastCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 90%;
+	width: 200px;
+	border-radius: 25px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	margin: 10px;
+}
+
+.forecastDate {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.forecastTime {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.forecastMaxTemp,
+.forecastTemp {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.forecastMinTemp {
+	font-size: 14px;
+	font-weight: 500;
+	color: lightgray;
+}
+
+.weatherIconForecast {
+	width: 75px;
+	height: 75px;
+}
+
+.currInfoLeft,
+.currInfoRight,
+.forecastSection,
+nav > *, 
+footer {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 25px;
+	background-color: #00000080;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(15px);
+}
+
+/* Footer */
+footer {
+	border-radius: 0px;
+	border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerText {
+    color: white;
+    font-size: 15px;
+}
+
+.githubIcon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+}
