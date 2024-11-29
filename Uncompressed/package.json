@@ -1,7 +1,7 @@
 {
   "name": "odinproject-weatherapp",
-  "version": "1.0.0",
-  "description": "OdinProjec WeatherApp",
+  "version": "2.0.0",
+  "description": "OdinProject WeatherApp",
   "main": "index.js",
   "private": "true",
   "scripts": {
@@ -26,4 +26,5 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
+  "djisdjijsd"
 }
